@@ -1,7 +1,8 @@
 ## Bob Carasik, Coursera R course assignment 2
 ##  
-## makeCacheMatrix creates get and set functions for both the 
-## given matrix and its inverse 
+ 
+## makeCacheMatrix creates get and set for both the 
+## given matrix and its inverse (transposition)
 
 makeCacheMatrix <- function(x = matrix()) {
   inv <- NULL;
@@ -20,15 +21,17 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-##  cacheSolve calculates the inverse once and stores the result for multiple retrieval
+## Write a short comment describing this function
+##  this function calculates the inverse once and stores the result for multiple retrieval
+##  first will implement for transposistion to test the caching
 ##  Get the inverse matrix of matrix x:
-##   using solve(x) 
+##   > solve(x) %*% x
 
 cacheSolve <- function(x, ...) {
   ## Return a matrix that is the inverse of 'x'
   inv <- x$getinv()
   if( !is.null(inv) ) {
-    message("getting the cached inverted matrix")
+   ## message("getting the cached inverted matrix")
     inv  
     return(inv)
   }
